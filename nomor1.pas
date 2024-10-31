@@ -49,14 +49,16 @@ begin
             diskontotal := diskon / 100;
         end;
 
-    bayar := hargatotal - (hargatotal * diskontotal);
     poin := trunc(hargatotal) div 50000;
 
     if poin >= 50 then
     begin
         diskon := diskon + 20;
+        diskontotal := diskontotal + 0.2;
     end;
 
+    bayar := hargatotal - (hargatotal * diskontotal);
+    
     writeln;
     writeln('Total: Rp', hargatotal:0:0);
     writeln('Diskon: ', diskon:0:0,'%');
